@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARCOM CENTER</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <a href="#" class="logo">Hair dresser</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services offered</a>
+            <a href="#">Contact us</a>
+            <a href="#">Blogs</a>
+            <a href="#">Book</a>
+            <a href="#">Review</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="content">
+            <span>Welcome</span>
+            <h3>We make<br>hair beautiful<br> and unique</h3>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h1 class="heading" id="heading">About us</h1>
+        <div class="row">
+            <div class="image" id="image">
+                <img src="./images/about draft.jpeg" alt="About Us Image">
+            </div>
+            <div class="content" id="content">
+                <h3 class="Title">We are a group of stylists</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci harum facilis consequatur dolores molestias quibusdam ipsum. Eos voluptatum fuga sed eveniet a nemo pariatur, aperiam modi qui quis deserunt?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus quisquam, similique blanditiis vel nam quasi voluptas, optio esse eos natus? Atque, delectus aut! Ipsum veritatis velit error assumenda facilis?</p>
+                
+                <!-- Icons Container now directly after the paragraphs -->
+                <div class="icons-container">
+                    <div class="icons">
+                        <img src="./images/about-icon-1.png" alt="Professional Tools">
+                        <h3>Professional Tools</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="./images/about-icon-2.png" alt="Quality Tools">
+                        <h3>Quality Tools</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="./images/about-icon-3.png" alt="Hair Washing">
+                        <h3>Hair Washing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+
+        <h1 class="heading">Services</h1>
+
+     <div class="box-container">
+      
+        <div class="box">
+            <img src="images/haircuts.jpg">
+
+            <div class="content"
+               <h3>Haircuts</h3>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <img src="images/hair stlye.jpg">
+            <div class="content"
+
+               <h3>hairstlying</h3>
+        </div>
+
+        </div>
+
+        <div class="box">
+
+            <img src="images/beard trim.jpg">
+            <div class="content"
+            <h3>Beard trimming</h3>
+        </div>
+
+        </div>
+
+       </div> 
+       
+    </section>
+    <section class="pricing" id="pricing">
+        <h1 class="heading">Offer and pricing</h1>
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="title">Basic</h3>
+                <div class="price">
+                <span class="currency">ksh</span>
+                <span class="amount">300</span>
+            </div>
+            <ul>
+                <li><i class='fas fa-check'></i>Simple haircut</li>
+                <li><i class='fas fa-check'></i>clean shave</li>
+                <li><i class='fas fa-check'></i>Back to school</li>
+                <!-- <li><i class='fas fa-check'></i>braiding</li> -->
+            </ul>
+            <a href=""><button>Book A visit</button></a>
+            </div>
+            <div class="box">
+                <h3 class="title">Premium</h3>
+                <div class="price">
+                <span class="currency">ksh</span>
+                <span class="amount">300</span>
+            </div>
+            <ul>
+                <li><i class='fas fa-check'></i>Simple haircut</li>
+                <li><i class='fas fa-check'></i>clean shave</li>
+                <li><i class='fas fa-check'></i>Back to school</li>
+                <!-- <li><i class='fas fa-check'></i>braiding</li> -->
+            </ul>
+            <a href=""><button>Book a visit</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="visit" id="visit">
+        <h1 class="heading">Book a visit</h1>
+        <div class="row">
+            <form action="">
+                <h3>Book your first visit today</h3>
+                <div class="inputBox">
+                    <input type="text" placeholder="Your Name">
+                </div>
+                <div class="inputBox">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Message">
+                </div>
+                <input type="submit" value="Send a message" class="btn">
+            </form>
+        </div>
+    </section>
+      <!-- Chatbot Button -->
+<!-- Chatbot Button -->
+<!-- Separate Chatbot Button -->
+<!-- Chat with Us Dropdown -->
+<div class="chat-container">
+    <button id="chat-with-us-btn" class="dropdown-btn">Chat with us</button>
+    <div id="chat-dropdown" class="dropdown-content" style="display: none;">
+        <a href="#" id="open-chatbot"><i class="fas fa-robot"></i> Chatbot</a>
+        <a href="#" id="open-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <!-- WhatsApp Numbers Dropdown -->
+    <div id="whatsapp-numbers" class="dropdown-content" style="display: none;">
+        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 1</a>
+        <a href="https://wa.me/0987654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 2</a>
+        <a href="https://wa.me/1122334455" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 3</a>
+    </div>
+</div>
+
+
+<!-- Chatbot Popup Window (Initially Hidden) -->
+<div id="chat-window" class="chat-window" style="display: none;">
+    <div class="chat-header">
+        <h4>Chatbot</h4>
+        <span id="close-chat">&times;</span>
+    </div>
+    <div class="chat-body">
+        <p>How can we help you?</p>
+    </div>
+    <div class="chat-footer">
+        <input type="text" placeholder="Type your message..." />
+    </div>
+</div>
+
+ <script>
+   // Get elements
+const chatWithUsBtn = document.getElementById('chat-with-us-btn');
+const chatDropdown = document.getElementById('chat-dropdown');
+const openChatbot = document.getElementById('open-chatbot');
+const openWhatsapp = document.getElementById('open-whatsapp');
+const whatsappNumbers = document.getElementById('whatsapp-numbers');
+const chatWindow = document.getElementById('chat-window');
+const closeChat = document.getElementById('close-chat');
+
+// Toggle the main Chat with Us dropdown
+chatWithUsBtn.addEventListener('click', () => {
+    chatDropdown.style.display = 'block';
+    whatsappNumbers.style.display = 'none'; // Hide WhatsApp numbers when Chat dropdown opens
+    chatWindow.style.display = 'none'; // Hide chatbot window when Chat dropdown opens
+});
+
+// Open WhatsApp numbers dropdown
+openWhatsapp.addEventListener('click', () => {
+    whatsappNumbers.style.display = 'block'; // Show WhatsApp numbers
+    chatWindow.style.display = 'none'; // Ensure the chatbot is hidden when WhatsApp is opened
+});
+
+// Open chatbot window
+openChatbot.addEventListener('click', () => {
+    chatDropdown.style.display = 'none'; // Hide the main dropdown
+    whatsappNumbers.style.display = 'none'; // Hide WhatsApp numbers when chatbot is opened
+    chatWindow.style.display = 'block'; // Show chatbot window
+});
+
+// Close chatbot window
+closeChat.addEventListener('click', () => {
+    chatWindow.style.display = 'none';
+    whatsappNumbers.style.display = 'none'; // Reset WhatsApp numbers
+    chatDropdown.style.display = 'none'; // Reset dropdown state
+});
+
+// Handle Enter key submission
+const chatInput = document.querySelector('.chat-footer input');
+chatInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        let userMessage = chatInput.value;
+        if (userMessage.trim() !== '') {
+            displayUserMessage(userMessage);
+            processMessage(userMessage);
+            chatInput.value = '';
+        }
+    }
+});
+
+// Display user message
+function displayUserMessage(message) {
+    const chatBody = document.querySelector('.chat-body');
+    const userMessageElement = document.createElement('p');
+    userMessageElement.textContent = 'You: ' + message;
+    chatBody.appendChild(userMessageElement);
+}
+
+// Display bot response
+function processMessage(userMessage) {
+    let botReply = '';
+    if (userMessage.includes('hairstyling')) {
+        botReply = 'Yes, we do hairstyling! Would you like to know more about styles or prices?';
+    } else {
+        botReply = 'I am sorry, I didn\'t understand that. Kindly try again.';
+    }
+    displayBotMessage(botReply);
+}
+
+// Display bot message
+function displayBotMessage(message) {
+    const chatBody = document.querySelector('.chat-body');
+    const botMessageElement = document.createElement('p');
+    botMessageElement.textContent = 'Bot: ' + message;
+    chatBody.appendChild(botMessageElement);
+}
+
+
+
+
+ </script>
+ <!-- WhatsApp Chat Section
+<div class="whatsapp-chat">
+    <h3>Chat with us</h3>
+    <ul>
+        <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 1</a></li>
+        <li><a href="https://wa.me/0987654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 2</a></li>
+        <li><a href="https://wa.me/1122334455" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 3</a></li>
+    </ul>
+</div> -->
+
+       </section> 
+    
+</body>
+</html>

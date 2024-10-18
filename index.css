@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:1,300,400,400italic,500,700,700italic,900');
+
+:root {
+    --main-color: #d7c7ae;
+    --primary-color: #8a6d46;
+    --hover: #5a4d3e;
+    --black: #2a201c;
+    --light-bg: #f3efec;
+    --dark-bg: rgba(0, 0, 0, .7);
+    --border: .1rem solid #aaa;
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: 'Playfair Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+    background-color: var(--light-bg);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+section {
+    padding: 5rem 7%;
+}
+
+.heading {
+    text-align: center;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+.header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--main-color);
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.header .navbar a {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.header .navbar a:hover {
+    padding-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.home {
+    background-image: url(./images/barber\ background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 5rem 7%;
+    display: flex;
+    align-items: center;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content span {
+    font-size: 3rem;
+    letter-spacing: .5rem;
+    padding-bottom: .5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.home .content h3 {
+    color: var(--black);
+    font-size: 8rem;
+    line-height: 8rem;
+    font-weight: 900;
+}
+
+.about .row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about .row .image {
+    flex: 1 1 40%;
+    max-width: 40%;
+}
+
+.about .row .image img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 50%;
+    padding: 5rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #444;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.about .icons-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem; /* Adjusted margin to fit directly under the paragraph */
+}
+
+.about .icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about .icons img {
+    height: 3rem;
+    width: auto;
+}
+
+.about .icons h3 {
+    font-size: 1.6rem;
+    color: #444;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+/* Services Section */
+.services {
+    background-color: var(--main-color);
+    padding: 5rem 7%;
+}
+
+.services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;  /* Spacing between boxes */
+}
+
+.services .box {
+    position: relative;
+    overflow: hidden;
+    height: 40rem;  /* Height adjusted for a better vertical look */
+    background: var(--light-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.services .box:hover {
+    transform: scale(1.05);  /* Slight zoom on hover */
+    box-shadow: 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.services .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.services .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);  /* Semi-transparent dark overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;  /* Align text at the bottom */
+    padding-bottom: 2rem;
+    opacity: 1;  /* Keep the overlay and text always visible */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.services .box .content h3 {
+    font-size: 3rem;
+    color: var(--white);
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 40rem;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header .logo {
+        font-size: 2rem;
+    }
+
+    .header .navbar a {
+        font-size: 1.8rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+
+    .home .content h3 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+
+    .about .row .content h3 {
+        font-size: 2.5rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.4rem;
+    }
+
+    .services .box {
+        height: 35rem;
+    }
+
+    .services .box .content h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header .logo {
+        font-size: 1.8rem;
+    }
+
+    .header .navbar a {
+        font-size: 1.6rem;
+    }
+
+    .home .content span {
+        font-size: 2rem;
+    }
+
+    .home .content h3 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+
+    .about .row .content h3 {
+        font-size: 2rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.2rem;
+    }
+
+    .services .box {
+        height: 30rem;
+    }
+
+    .services .box .content h3 {
+        font-size: 2rem;
+    }
+}
+.pricing .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.pricing .box-container .box{
+  height: 500px;
+  width: 300px;
+  margin: 20px 40px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  text-align:center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: var(--primary-color);
+}
+.pricing .box-container .box::before{
+     background: var(--main-color);
+     bottom: -10%;right:80%;
+}
+.pricing .box-container .box::after{
+    background: var(--main-color);
+    bottom: -10%;right:80%;
+  
+}
+.pricing .box-container .box .title{
+    margin:30px 0;
+  font-size: 26px;
+  color: var(--main-color);
+  text-transform: capitalize;
+}
+.pricing .box-container .box .price{
+    height: 160px;
+    width: 160px;
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 57px 0 0;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+}
+.pricing .box-container .box .currency{
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 300;
+}
+.pricing .box-container .box .amount{
+   font-size: 35px;
+   line-height: 35px;
+   font-weight: 700;
+}
+.pricing .box-container .box ul li{
+    text-align: left;
+    font-size:16px;
+    padding-left: 45px;
+    margin: 20px auto;
+    color: var(--white);
+    list-style:none;
+    text-transform: uppercase;
+}
+.pricing .box-container .box ul li i{
+    color: var(--main-color);
+    padding: 0 10px;
+}
+.pricing .box-container .box button{
+    height: 40px;
+    width: 140px;
+    outline: none;
+    border-radius: 50px;
+    text-transform: capitalize;
+    cursor: pointer;
+    background: none;
+    color: var(--main-color);
+    border: 2px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.pricing .box-container .box button:hover{
+  color: var(--white);
+  background: var(--main-color);
+}
+.visit {
+    background-color: var(--main-color);
+    background-size: cover;
+    background-position: center;
+}
+/* .visit .row{
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.visit .row .inputBox{
+    text-transform: capitalize;
+    
+} */
+.visit .row form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.visit .row form h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.visit .row .inputBox {
+    margin-bottom: 1.5rem;
+}
+
+.visit .row .inputBox input {
+    width: 100%;
+    padding: 1.2rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+}
+
+.visit .row .inputBox input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.visit .row .btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.visit .row .btn:hover {
+    background-color: var(--hover);
+}
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-width: 200px;
+}
+
+.whatsapp-chat h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.whatsapp-chat ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.whatsapp-chat ul li {
+    margin-bottom: 0.5rem;
+}
+
+.whatsapp-chat ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #25d366;
+    text-decoration: none;
+}
+
+.whatsapp-chat ul li a:hover {
+    color: var(--hover);
+}
+
+.whatsapp-chat ul li i {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+/* Chatbot Button Styling
+.chatbot {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot button {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* WhatsApp Dropdown Button Styling */
+.whatsapp-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-chat-container .dropdown-btn {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* WhatsApp Dropdown Menu Styling */
+.dropdown-content {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 100;
+    
+}
+
+.dropdown-content a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #25d366;
+    font-size: 1.6rem;
+    text-decoration: none;
+    
+}
+
+.dropdown-content a i {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+/* Show Dropdown on Click 
+.whatsapp-chat-container .dropdown-btn:hover + .dropdown-content,
+.whatsapp-chat-container .dropdown-btn:focus + .dropdown-content {
+    display: block;
+}
+
+/* Chatbot Window Styling 
+.chat-window {
+    position: fixed;
+    bottom: 180px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.chat-header span {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 0.3rem;
+} */
+/* Chat with Us Button Styling */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-container .dropdown-btn {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Chat with Us Dropdown Menu Styling */
+.dropdown-content {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #25d366;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.dropdown-content a i {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+/* Chatbot Window Styling */
+.chat-window {
+    position: fixed;
+    bottom: 180px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.chat-header span {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 0.3rem;
+}
+/* Styling for the WhatsApp dropdown */
+.whatsapp-dropdown, .dropdown-content {
+    display: none;
+    position: absolute; /* Ensure it's positioned relative to its container */
+    /* top: 100%; Push it below the button */
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 1rem;
+    min-width: 200px; /* Give it some width */
+}
+
+.whatsapp-dropdown.show, .dropdown-content.show {
+    display: block; /* Display the dropdown when active */
+}
+
+.dropdown-btn {
+    position: relative; /* Ensure the button is relative to the dropdown */
+    z-index: 2; /* Ensure it's above other elements */
+}
