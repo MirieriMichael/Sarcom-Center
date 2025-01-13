@@ -11,15 +11,14 @@
 <body>
     <!-- Header -->
     <section class="header">
-        <a href="#" class="logo">Hair dresser</a>
+        <a href="#" class="logo">Afro Go Me</a>
         <nav class="navbar">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services offered</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services offered</a>
             <a href="#">Contact us</a>
-            <a href="#">Blogs</a>
-            <a href="#">Book</a>
-            <a href="#">Review</a>
+            <a href="#visit">Book</a>
+            <a href="#review">Review</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </section>
@@ -41,8 +40,8 @@
             </div>
             <div class="content" id="content">
                 <h3 class="Title">We are a group of stylists</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci harum facilis consequatur dolores molestias quibusdam ipsum. Eos voluptatum fuga sed eveniet a nemo pariatur, aperiam modi qui quis deserunt?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus quisquam, similique blanditiis vel nam quasi voluptas, optio esse eos natus? Atque, delectus aut! Ipsum veritatis velit error assumenda facilis?</p>
+                <p>At our salon, we specialize in creating stunning hairstyles tailored to your unique preferences. Whether you're looking for a bold new look, a classic cut, or expert advice on hair care, our experienced stylists are here to bring your vision to life. We pride ourselves on using top-quality products to ensure your hair stays healthy and vibrant.</p>
+                <p>Our team is passionate about helping you feel confident and beautiful. From precision cuts and vibrant colors to sleek styling and updos for special occasions, we offer a range of services designed to meet your needs. Step into our salon and let us pamper you while creating a style you'll love.</p>
                 
                 <!-- Icons Container now directly after the paragraphs -->
                 <div class="icons-container">
@@ -65,39 +64,34 @@
     <section class="services" id="services">
 
         <h1 class="heading">Services</h1>
-
-     <div class="box-container">
-      
-        <div class="box">
-            <img src="images/haircuts.jpg">
-
-            <div class="content"
-               <h3>Haircuts</h3>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="images/haircuts.jpg" alt="Haircuts">
+                <div class="content">
+                    <h3>Haircuts</h3>
+                </div>
             </div>
-
+    
+            <div class="box">
+                <img src="images/hairstylying.jpg" alt="Hairstyling">
+                <div class="content">
+                    <h3>Hairstyling</h3>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="images/beard trim.jpg" alt="Beard Trimming">
+                <div class="content">
+                    <h3>Beard Trimming</h3>
+                </div>
+            </div>
+    
         </div>
-
-        <div class="box">
-            <img src="images/hair stlye.jpg">
-            <div class="content"
-
-               <h3>hairstlying</h3>
-        </div>
-
-        </div>
-
-        <div class="box">
-
-            <img src="images/beard trim.jpg">
-            <div class="content"
-            <h3>Beard trimming</h3>
-        </div>
-
-        </div>
-
-       </div> 
-       
+    
     </section>
+    
     <section class="pricing" id="pricing">
         <h1 class="heading">Offer and pricing</h1>
         <div class="box-container">
@@ -120,12 +114,14 @@
                 <h3 class="title">Premium</h3>
                 <div class="price">
                 <span class="currency">ksh</span>
-                <span class="amount">300</span>
+                <span class="amount">500</span>
             </div>
             <ul>
-                <li><i class='fas fa-check'></i>Simple haircut</li>
+                <li><i class='fas fa-check'></i>Professional haircut</li>
                 <li><i class='fas fa-check'></i>clean shave</li>
-                <li><i class='fas fa-check'></i>Back to school</li>
+                <li><i class='fas fa-check'></i>Braiding</li>
+                <li><i class='fas fa-check'></i>Beard shaving</li>
+                
                 <!-- <li><i class='fas fa-check'></i>braiding</li> -->
             </ul>
             <a href=""><button>Book a visit</button></a>
@@ -166,9 +162,9 @@
 
     <!-- WhatsApp Numbers Dropdown -->
     <div id="whatsapp-numbers" class="dropdown-content" style="display: none;">
-        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 1</a>
-        <a href="https://wa.me/0987654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 2</a>
-        <a href="https://wa.me/1122334455" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 3</a>
+        <a href="https://wa.me/0724954018" target="_blank"><i class="fab fa-whatsapp"></i> Stlyist</a>
+        <!-- <a href="https://wa.me/0987654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 2</a>
+        <a href="https://wa.me/1122334455" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Number 3</a> -->
     </div>
 </div>
 
@@ -246,13 +242,24 @@ function displayUserMessage(message) {
 }
 
 // Display bot response
+// Process user message and determine bot response
 function processMessage(userMessage) {
     let botReply = '';
+
     if (userMessage.includes('hairstyling')) {
         botReply = 'Yes, we do hairstyling! Would you like to know more about styles or prices?';
+    } else if (userMessage.includes('pricing')) {
+        botReply = 'Our prices vary based on the service. Haircuts start at 100ksh, and styling begins at 500ksh.';
+    } else if (userMessage.includes('appointment')) {
+        botReply = 'You can book an appointment by contacting us or using the form on our website!';
+    } else if (userMessage.includes('coloring')) {
+        botReply = 'We offer professional hair coloring services with a variety of shades. Would you like to know about the colors available?';
+    } else if (userMessage.includes('thank you')) {
+        botReply = 'You’re welcome! Feel free to ask if you have more questions.';
     } else {
         botReply = 'I am sorry, I didn\'t understand that. Kindly try again.';
     }
+
     displayBotMessage(botReply);
 }
 
@@ -264,10 +271,61 @@ function displayBotMessage(message) {
     chatBody.appendChild(botMessageElement);
 }
 
+// When the form is submitted
+const reviewForm = document.getElementById('review-form');
+const reviewsList = document.getElementById('reviews-list');
+
+reviewForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the page from reloading
+
+    // Get the user's name and review from the input fields
+    const name = document.getElementById('name').value;
+    const review = document.getElementById('review').value;
+
+    // Send review data to the server
+    fetch('/reviews', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: name, review: review }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Display the new review on the page
+            displayReview(name, review);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+
+    // Clear the form after submission
+    reviewForm.reset();
+});
+
+// Function to display a review
+function displayReview(name, review) {
+    const reviewElement = document.createElement('div');
+    reviewElement.classList.add('review');
+    reviewElement.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+    reviewsList.appendChild(reviewElement);
+}
+
+// Fetch and display existing reviews on page load
+window.addEventListener('DOMContentLoaded', (event) => {
+    fetch('/reviews')
+    .then(response => response.json())
+    .then(reviews => {
+        reviews.forEach(review => {
+            const [name, text] = review;
+            displayReview(name, text);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>
 
 
-
- </script>
  <!-- WhatsApp Chat Section
 <div class="whatsapp-chat">
     <h3>Chat with us</h3>
@@ -280,5 +338,53 @@ function displayBotMessage(message) {
 
        </section> 
     
+       <!-- <footer class="footer">
+        <div class="footer-container">
+            <div class="location">
+              <h3>Our location </h3>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=YourGoogleMapEmbedLinkHere"
+                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+               referrerpolicy="'no-referrer-when-downgrade"
+            </iframe>
+            </div>
+            <div class="socialmedia">
+                <h3>Follow us</h3>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+       </footer> -->
+       <!-- Customer Reviews Section -->
+        
+<div class="reviews-container" id="review">
+    <h2>Customer Reviews</h2>
+    <form id="review-form">
+        <div class="form-group">
+            <input type="text" id="review-name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+            <input type="email" id="review-email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+            <textarea id="review-message" name="message" placeholder="Your Review" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">SUBMIT REVIEW</button>
+        </div>
+    </form>
+</div>
+<!-- <div class="footer">
+    <h2>Follow Us</h2>
+    div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook-icon.png" alt="Facebook" />
+        </a><
+    </div>
+</div> -->
 </body>
 </html>
