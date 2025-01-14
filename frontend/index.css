@@ -92,7 +92,7 @@ section {
 }
 
 .home {
-    background-image: url(./images/barber\ background.jpg);
+    background-image: url(/images/barber\ background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
